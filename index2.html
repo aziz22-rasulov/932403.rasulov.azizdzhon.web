@@ -14,34 +14,6 @@
       column-count: 2;
       column-gap: 28px;
     }
-
-    .project-item {
-      break-inside: avoid;
-      margin-bottom: 20px;
-      padding: 16px;
-      background-color: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-    }
-
-    .project-item h3 {
-      margin: 0 0 8px;
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      color: var(--rust-dark);
-    }
-
-    .project-item p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--ink);
-    }
-
-    @media (max-width: 600px) {
-      .projects-columns {
-        column-count: 1;
-      }
-    }
   </style>
 </head>
 <body>
@@ -63,6 +35,7 @@
     <ul class="nav-list">
       <li><a href="#skills">Навыки</a></li>
       <li><a href="#countries">Страны</a></li>
+      <li><a href="#progress">Прогресс</a></li>
       <li><a href="#projects">Проекты</a></li>
       <li><a href="#contact">Связь</a></li>
     </ul>
@@ -77,10 +50,67 @@
 
       <section id="skills" aria-labelledby="skills-title">
         <h2 id="skills-title">Навыки</h2>
-        <ul class="skills">
-          <li>Знание иностранных языков</li>
-          <li>Умение ориентироваться по карте</li>
-          <li>Навыки выживания в дикой природе</li>
+        <ul class="skill-cards">
+          <li class="skill-card">
+            <dl>
+              <div class="skill-row">
+                <dt>Навык</dt>
+                <dd>Навигация по карте</dd>
+              </div>
+              <div class="skill-row">
+                <dt>Уровень</dt>
+                <dd>90%</dd>
+              </div>
+            </dl>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <dl>
+              <div class="skill-row">
+                <dt>Навык</dt>
+                <dd>Иностранные языки</dd>
+              </div>
+              <div class="skill-row">
+                <dt>Уровень</dt>
+                <dd>75%</dd>
+              </div>
+            </dl>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <dl>
+              <div class="skill-row">
+                <dt>Навык</dt>
+                <dd>Фотография</dd>
+              </div>
+              <div class="skill-row">
+                <dt>Уровень</dt>
+                <dd>65%</dd>
+              </div>
+            </dl>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 65%;"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <dl>
+              <div class="skill-row">
+                <dt>Навык</dt>
+                <dd>Выживание в дикой природе</dd>
+              </div>
+              <div class="skill-row">
+                <dt>Уровень</dt>
+                <dd>55%</dd>
+              </div>
+            </dl>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 55%;"></div>
+            </div>
+          </li>
         </ul>
       </section>
 
@@ -91,6 +121,24 @@
           <li>Турция</li>
           <li>Казахстан</li>
         </ol>
+      </section>
+
+      <section id="progress" aria-labelledby="progress-title">
+        <h2 id="progress-title">Статистика прогресса</h2>
+        <ul class="stats-grid">
+          <li class="stat-block">
+            <p class="stat-number">3</p>
+            <h3 class="stat-label">Страны</h3>
+          </li>
+          <li class="stat-block">
+            <p class="stat-number">9</p>
+            <h3 class="stat-label">Города</h3>
+          </li>
+          <li class="stat-block">
+            <p class="stat-number">240</p>
+            <h3 class="stat-label">Фото</h3>
+          </li>
+        </ul>
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
@@ -141,6 +189,7 @@
       <h2 id="city-title">Любимый город</h2>
       <p class="city-name">Томск</p>
       <p class="city-note">Место, куда возвращаюсь между поездками.</p>
+      <p class="city-link"><a href="https://ru.wikipedia.org/wiki/Томск" target="_blank" rel="noopener noreferrer">Подробнее о Томске</a></p>
     </aside>
   </div>
 
