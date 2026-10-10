@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background-color: var(--cream);
@@ -23,6 +27,11 @@ body {
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2 {
@@ -49,10 +58,14 @@ a:visited {
   color: var(--visited);
 }
 
-a:focus-visible,
+a:focus,
+button:focus {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
 input:focus-visible,
-textarea:focus-visible,
-button:focus-visible {
+textarea:focus-visible {
   outline: 2px solid var(--rust);
   outline-offset: 2px;
 }
@@ -97,10 +110,9 @@ button:focus-visible {
 
 .nav-list {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 12px 24px;
   max-width: 980px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -162,10 +174,6 @@ main {
   max-width: 62ch;
 }
 
-main section {
-  scroll-margin-top: 90px;
-}
-
 .intro {
   margin: 0 0 36px;
   font-size: 1.15rem;
@@ -175,6 +183,7 @@ main section {
 main section {
   padding: 32px 0;
   border-top: 1px solid var(--line);
+  scroll-margin-top: 90px;
 }
 
 main h2 {
@@ -188,27 +197,122 @@ main h2 {
 }
 
 
-.skills {
+.project-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.project-item h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--rust-dark);
+}
+
+.project-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+
+.skill-cards {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.skills li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
+.skill-card {
+  flex: 1 1 calc(25% - 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }
 
-.skills li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.skill-card dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.skill-row dt {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.skill-row dd {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #3a332c;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
   background-color: var(--rust);
+  border-radius: 999px;
+}
+
+
+.stats-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.stat-block {
+  padding: 20px 12px;
+  text-align: center;
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.stat-number {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--rust-dark);
+}
+
+.stat-label {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
 }
 
 
@@ -354,6 +458,11 @@ main h2 {
   color: var(--muted);
 }
 
+.city-link {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+}
+
 
 .site-footer {
   border-top: 1px solid var(--line);
@@ -368,10 +477,30 @@ main h2 {
 }
 
 
+@media (max-width: 900px) {
+  .skill-card {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
 @media (max-width: 780px) {
   .layout {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  main .projects-columns {
+    column-count: 1;
+  }
+
+  .skill-card {
+    flex: 1 1 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }
 
