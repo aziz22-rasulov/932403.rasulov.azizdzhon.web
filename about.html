@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Страница «Обо мне»: путешественник и исследователь.">
+  <meta name="theme-color" content="#ad561c">
+  <title>Обо мне — Расулов Азизджон</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <svg class="compass" width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <circle cx="26" cy="26" r="23" stroke="currentColor" stroke-width="2"/>
+        <path d="M26 10 L30 26 L26 42 L22 26 Z" fill="currentColor"/>
+        <circle cx="26" cy="26" r="2.5" fill="var(--cream)"/>
+      </svg>
+      <div class="identity">
+        <h1>Расулов Азизджон</h1>
+        <p class="role">Обо мне — путешественник и исследователь</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Навигация по сайту">
+    <ul class="nav-list">
+      <li><a href="/">Главная</a></li>
+      <li><a href="/about" aria-current="page">Обо мне</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-single">
+    <main>
+      <section aria-labelledby="about-title">
+        <h2 id="about-title">Обо мне</h2>
+        <p>
+          Меня зовут Расулов Азизджон. Люблю дороги, карты и языки — от подготовки маршрута
+          до разговора с местными жителями.
+        </p>
+      </section>
+
+      <section aria-labelledby="about-skills-title">
+        <h2 id="about-skills-title">Что помогает в поездках</h2>
+        <ul class="skill-list">
+          <li>Знание иностранных языков</li>
+          <li>Умение ориентироваться по карте</li>
+          <li>Навыки выживания в дикой природе</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="about-countries-title">
+        <h2 id="about-countries-title">Где уже был</h2>
+        <ol class="countries">
+          <li>Узбекистан</li>
+          <li>Турция</li>
+          <li>Казахстан</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="about-city-title">
+        <h2 id="about-city-title">Любимый город</h2>
+        <p>Томск — место, куда я возвращаюсь между поездками.</p>
+        <p class="back-link"><a href="/">← Вернуться на главную</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Расулов Азизджон. Все права защищены.</p>
+  </footer>
+
+  <script src="/pwa.js" defer></script>
+</body>
+</html>
